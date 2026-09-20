@@ -1,0 +1,488 @@
+.dead-page {
+  width: 100%;
+  min-height: 100vh;
+  background:
+    radial-gradient(
+      circle at top left,
+      #243b55 0%,
+      #111827 45%,
+      #050b14 100%
+    );
+  color: white;
+  padding: 40px 20px;
+  overflow-y: auto;
+}
+
+.dead-container {
+  width: min(1100px, 100%);
+  margin: 0 auto;
+}
+
+/* =========================================================
+   HEADER
+   ========================================================= */
+
+.dead-header {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+  margin-bottom: 30px;
+}
+
+.dead-icon {
+  width: 75px;
+  height: 75px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: #1e293b;
+  border: 1px solid rgba(255, 255, 255, 0.12);
+  border-radius: 22px;
+  font-size: 38px;
+  box-shadow:
+    0 15px 40px rgba(0, 0, 0, 0.35);
+}
+
+.dead-label {
+  color: #f87171;
+  font-size: 11px;
+  font-weight: 900;
+  letter-spacing: 3px;
+  margin-bottom: 5px;
+}
+
+.dead-header h1 {
+  font-size: clamp(32px, 5vw, 52px);
+  line-height: 1;
+  margin-bottom: 8px;
+}
+
+.dead-subtitle {
+  color: #94a3b8;
+  font-size: 14px;
+}
+
+/* =========================================================
+   ROOM CARD
+   ========================================================= */
+
+.dead-room-card {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  gap: 15px;
+  margin-bottom: 22px;
+}
+
+.dead-room-card > div {
+  padding: 20px;
+  background: rgba(30, 41, 59, 0.75);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  border-radius: 18px;
+}
+
+.dead-room-card span {
+  display: block;
+  color: #64748b;
+  font-size: 10px;
+  font-weight: 900;
+  letter-spacing: 2px;
+  margin-bottom: 8px;
+}
+
+.dead-room-card strong {
+  display: block;
+  color: white;
+  font-size: 18px;
+}
+
+/* =========================================================
+   YOUR RESULT
+   ========================================================= */
+
+.your-result {
+  display: grid;
+  grid-template-columns: auto 1fr auto;
+  align-items: center;
+  gap: 18px;
+  padding: 22px;
+  margin-bottom: 25px;
+  background:
+    linear-gradient(
+      135deg,
+      rgba(245, 158, 11, 0.14),
+      rgba(30, 41, 59, 0.9)
+    );
+  border: 1px solid rgba(245, 158, 11, 0.3);
+  border-radius: 22px;
+}
+
+.result-dino {
+  width: 65px;
+  height: 65px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border: 4px solid;
+  border-radius: 18px;
+  background: rgba(255, 255, 255, 0.08);
+  font-size: 38px;
+}
+
+.your-result-info span,
+.your-result-score span {
+  display: block;
+  color: #94a3b8;
+  font-size: 10px;
+  font-weight: 900;
+  letter-spacing: 2px;
+}
+
+.your-result-info h2 {
+  margin-top: 5px;
+  font-size: 23px;
+}
+
+.your-result-info p {
+  margin-top: 3px;
+  color: #64748b;
+  font-size: 12px;
+}
+
+.your-result-score {
+  text-align: right;
+}
+
+.your-result-score strong {
+  display: block;
+  margin-top: 5px;
+  color: #fbbf24;
+  font-size: 34px;
+}
+
+/* =========================================================
+   LEADERBOARD HEADER
+   ========================================================= */
+
+.dead-leaderboard {
+  background: rgba(15, 23, 42, 0.8);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  border-radius: 24px;
+  padding: 25px;
+}
+
+.dead-section-title {
+  display: flex;
+  align-items: flex-end;
+  justify-content: space-between;
+  margin-bottom: 20px;
+}
+
+.dead-section-title span {
+  color: #64748b;
+  font-size: 10px;
+  font-weight: 900;
+  letter-spacing: 2px;
+}
+
+.dead-section-title h2 {
+  margin-top: 5px;
+  font-size: 25px;
+}
+
+.total-players {
+  padding: 8px 13px;
+  border-radius: 9px;
+  background: #1e293b;
+  color: #94a3b8;
+  font-size: 10px;
+  font-weight: 900;
+}
+
+/* =========================================================
+   PLAYER ROW
+   ========================================================= */
+
+.dead-list {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.dead-player-row {
+  display: grid;
+  grid-template-columns: 60px 60px 1fr 120px 100px;
+  align-items: center;
+  gap: 15px;
+  min-height: 85px;
+  padding: 12px 18px;
+  background: #172033;
+  border: 1px solid rgba(255, 255, 255, 0.06);
+  border-radius: 16px;
+  transition:
+    transform 0.2s ease,
+    border-color 0.2s ease;
+}
+
+.dead-player-row:hover {
+  transform: translateX(4px);
+  border-color: rgba(255, 255, 255, 0.15);
+}
+
+.my-dead-row {
+  border-color: rgba(251, 191, 36, 0.4);
+  background: #1d2637;
+}
+
+/* =========================================================
+   RANK
+   ========================================================= */
+
+.dead-rank {
+  font-size: 17px;
+  font-weight: 900;
+  color: #94a3b8;
+}
+
+.rank-1 {
+  color: #fbbf24;
+}
+
+.rank-2 {
+  color: #cbd5e1;
+}
+
+.rank-3 {
+  color: #d97706;
+}
+
+/* =========================================================
+   DINO
+   ========================================================= */
+
+.dead-dino {
+  width: 55px;
+  height: 55px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border: 3px solid;
+  border-radius: 15px;
+  background: rgba(255, 255, 255, 0.07);
+  font-size: 31px;
+}
+
+/* =========================================================
+   PLAYER INFO
+   ========================================================= */
+
+.dead-player-name {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.dead-player-name h3 {
+  font-size: 16px;
+}
+
+.dead-player-info p {
+  margin-top: 4px;
+  color: #64748b;
+  font-size: 11px;
+}
+
+.you-small {
+  padding: 4px 7px;
+  border-radius: 6px;
+  background: #fbbf24;
+  color: #111827;
+  font-size: 8px;
+  font-weight: 900;
+}
+
+/* =========================================================
+   STATUS
+   ========================================================= */
+
+.player-status {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  font-size: 10px;
+  font-weight: 900;
+  letter-spacing: 1px;
+}
+
+.status-dot {
+  font-size: 12px;
+}
+
+.status-dead {
+  color: #f87171;
+}
+
+.status-playing {
+  color: #4ade80;
+}
+
+/* =========================================================
+   SCORE
+   ========================================================= */
+
+.dead-score {
+  text-align: right;
+}
+
+.dead-score span {
+  display: block;
+  color: #64748b;
+  font-size: 8px;
+  font-weight: 900;
+  letter-spacing: 1px;
+}
+
+.dead-score strong {
+  display: block;
+  margin-top: 3px;
+  color: white;
+  font-size: 21px;
+}
+
+/* =========================================================
+   BUTTONS
+   ========================================================= */
+
+.dead-actions {
+  display: flex;
+  justify-content: flex-end;
+  gap: 12px;
+  margin-top: 25px;
+}
+
+.dead-actions button {
+  border: none;
+  border-radius: 12px;
+  padding: 15px 22px;
+  font-size: 11px;
+  font-weight: 900;
+  letter-spacing: 0.5px;
+  cursor: pointer;
+  transition:
+    transform 0.2s ease,
+    opacity 0.2s ease;
+}
+
+.dead-actions button:hover {
+  transform: translateY(-2px);
+}
+
+.dead-back-button {
+  background: #334155;
+  color: white;
+}
+
+.dead-play-button {
+  background: #fbbf24;
+  color: #111827;
+}
+
+/* =========================================================
+   DINO COLORS
+   ========================================================= */
+
+.dino-red {
+  border-color: #ef4444 !important;
+}
+
+.dino-blue {
+  border-color: #3b82f6 !important;
+}
+
+.dino-green {
+  border-color: #22c55e !important;
+}
+
+.dino-yellow {
+  border-color: #eab308 !important;
+}
+
+.dino-purple {
+  border-color: #a855f7 !important;
+}
+
+.dino-orange {
+  border-color: #f97316 !important;
+}
+
+/* =========================================================
+   RESPONSIVE
+   ========================================================= */
+
+@media (max-width: 800px) {
+  .dead-page {
+    padding: 25px 15px;
+  }
+
+  .dead-room-card {
+    grid-template-columns: 1fr;
+  }
+
+  .dead-player-row {
+    grid-template-columns:
+      45px
+      50px
+      1fr
+      90px;
+  }
+
+  .player-status {
+    justify-content: flex-end;
+  }
+
+  .dead-score {
+    display: none;
+  }
+}
+
+@media (max-width: 550px) {
+  .dead-header {
+    align-items: flex-start;
+  }
+
+  .dead-icon {
+    width: 55px;
+    height: 55px;
+    font-size: 28px;
+    border-radius: 16px;
+  }
+
+  .dead-player-row {
+    grid-template-columns:
+      35px
+      45px
+      1fr;
+    gap: 10px;
+  }
+
+  .player-status {
+    grid-column: 3;
+    justify-content: flex-start;
+  }
+
+  .dead-actions {
+    flex-direction: column;
+  }
+
+  .dead-actions button {
+    width: 100%;
+  }
+
+  .your-result {
+    grid-template-columns: auto 1fr;
+  }
+
+  .your-result-score {
+    grid-column: 2;
+    text-align: left;
+  }
+}

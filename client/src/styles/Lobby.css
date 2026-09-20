@@ -1,0 +1,1132 @@
+/* =========================================================
+   PAGE
+========================================================= */
+
+.lobby-page {
+  min-height: 100vh;
+
+  padding: 40px 20px;
+
+  background:
+    radial-gradient(
+      circle at top left,
+      rgba(59, 130, 246, 0.15),
+      transparent 35%
+    ),
+    radial-gradient(
+      circle at bottom right,
+      rgba(168, 85, 247, 0.12),
+      transparent 35%
+    ),
+    #080b14;
+
+  color: white;
+}
+
+
+/* =========================================================
+   CONTAINER
+========================================================= */
+
+.lobby-container {
+  width: 100%;
+  max-width: 1100px;
+
+  margin: 0 auto;
+}
+
+
+/* =========================================================
+   HEADER
+========================================================= */
+
+.lobby-header {
+  display: flex;
+
+  align-items: flex-start;
+
+  gap: 25px;
+
+  margin-bottom: 30px;
+}
+
+
+.lobby-back-button {
+  border: 1px solid #374151;
+
+  background: #111827;
+
+  color: #cbd5e1;
+
+  padding: 11px 17px;
+
+  border-radius: 10px;
+
+  cursor: pointer;
+
+  font-size: 14px;
+
+  transition: 0.2s;
+}
+
+
+.lobby-back-button:hover {
+  background: #1f2937;
+
+  color: white;
+
+  transform: translateX(-2px);
+}
+
+
+.lobby-title-area p {
+  color: #60a5fa;
+
+  font-size: 12px;
+
+  font-weight: 800;
+
+  letter-spacing: 2px;
+
+  margin-bottom: 6px;
+}
+
+
+.lobby-title-area h1 {
+  font-size: 34px;
+
+  margin-bottom: 6px;
+}
+
+
+.lobby-title-area span {
+  color: #94a3b8;
+
+  font-size: 14px;
+}
+
+
+/* =========================================================
+   ROOM CODE
+========================================================= */
+
+.room-code-card {
+  display: flex;
+
+  align-items: center;
+
+  justify-content: space-between;
+
+  padding: 22px 25px;
+
+  margin-bottom: 30px;
+
+  border-radius: 18px;
+
+  border: 1px solid #263244;
+
+  background:
+    linear-gradient(
+      135deg,
+      #111827,
+      #0f172a
+    );
+
+  box-shadow:
+    0 15px 35px rgba(0, 0, 0, 0.3);
+}
+
+
+.room-code-card p {
+  color: #64748b;
+
+  font-size: 11px;
+
+  font-weight: 800;
+
+  letter-spacing: 2px;
+
+  margin-bottom: 5px;
+}
+
+
+.room-code-card h2 {
+  font-size: 30px;
+
+  letter-spacing: 6px;
+
+  color: #f8fafc;
+}
+
+
+.copy-code-button {
+  padding: 12px 18px;
+
+  border: 1px solid #334155;
+
+  background: #1e293b;
+
+  color: white;
+
+  border-radius: 10px;
+
+  cursor: pointer;
+
+  font-weight: 700;
+}
+
+
+.copy-code-button:hover {
+  background: #334155;
+}
+
+
+/* =========================================================
+   SECTION
+========================================================= */
+
+.players-section,
+.leaderboard-section {
+  margin-bottom: 30px;
+}
+
+
+.section-heading {
+  display: flex;
+
+  align-items: flex-end;
+
+  justify-content: space-between;
+
+  margin-bottom: 15px;
+}
+
+
+.section-heading span {
+  color: #64748b;
+
+  font-size: 11px;
+
+  font-weight: 800;
+
+  letter-spacing: 2px;
+}
+
+
+.section-heading h2 {
+  margin-top: 4px;
+
+  font-size: 22px;
+}
+
+
+.section-heading > p {
+  color: #94a3b8;
+
+  font-size: 13px;
+}
+
+
+/* =========================================================
+   PLAYER GRID
+========================================================= */
+
+.players-grid {
+  display: grid;
+
+  grid-template-columns:
+    repeat(2, minmax(0, 1fr));
+
+  gap: 16px;
+}
+
+
+/* =========================================================
+   PLAYER CARD
+========================================================= */
+
+.player-card {
+  position: relative;
+
+  display: flex;
+
+  align-items: center;
+
+  gap: 16px;
+
+  min-height: 125px;
+
+  padding: 18px;
+
+  border-radius: 18px;
+
+  background: #111827;
+
+  border: 2px solid #263244;
+
+  overflow: hidden;
+
+  transition:
+    transform 0.2s ease,
+    border-color 0.2s ease,
+    box-shadow 0.2s ease;
+}
+
+
+.player-card:hover {
+  transform: translateY(-3px);
+}
+
+
+.current-player-card {
+  border-color: #60a5fa;
+
+  box-shadow:
+    0 0 25px rgba(59, 130, 246, 0.15);
+}
+
+
+/* =========================================================
+   RED PLAYER CARD
+========================================================= */
+
+.player-card.color-red {
+  border-color: rgba(239, 68, 68, 0.55);
+
+  background:
+    linear-gradient(
+      135deg,
+      rgba(127, 29, 29, 0.45),
+      #111827 65%
+    );
+}
+
+
+/* =========================================================
+   BLUE PLAYER CARD
+========================================================= */
+
+.player-card.color-blue {
+  border-color: rgba(59, 130, 246, 0.55);
+
+  background:
+    linear-gradient(
+      135deg,
+      rgba(30, 58, 138, 0.45),
+      #111827 65%
+    );
+}
+
+
+/* =========================================================
+   GREEN PLAYER CARD
+========================================================= */
+
+.player-card.color-green {
+  border-color: rgba(34, 197, 94, 0.55);
+
+  background:
+    linear-gradient(
+      135deg,
+      rgba(20, 83, 45, 0.45),
+      #111827 65%
+    );
+}
+
+
+/* =========================================================
+   YELLOW PLAYER CARD
+========================================================= */
+
+.player-card.color-yellow {
+  border-color: rgba(250, 204, 21, 0.55);
+
+  background:
+    linear-gradient(
+      135deg,
+      rgba(113, 63, 18, 0.45),
+      #111827 65%
+    );
+}
+
+
+/* =========================================================
+   PURPLE PLAYER CARD
+========================================================= */
+
+.player-card.color-purple {
+  border-color: rgba(168, 85, 247, 0.55);
+
+  background:
+    linear-gradient(
+      135deg,
+      rgba(88, 28, 135, 0.45),
+      #111827 65%
+    );
+}
+
+
+/* =========================================================
+   ORANGE PLAYER CARD
+========================================================= */
+
+.player-card.color-orange {
+  border-color: rgba(249, 115, 22, 0.55);
+
+  background:
+    linear-gradient(
+      135deg,
+      rgba(124, 45, 18, 0.45),
+      #111827 65%
+    );
+}
+
+
+/* =========================================================
+   DINO
+========================================================= */
+
+.lobby-dino {
+  position: relative;
+
+  width: 70px;
+  height: 70px;
+
+  min-width: 70px;
+
+  display: flex;
+
+  align-items: center;
+
+  justify-content: center;
+
+  border-radius: 22px;
+
+  border: 4px solid white;
+
+  font-size: 38px;
+
+  background: #1f2937;
+
+  box-shadow:
+    0 8px 25px rgba(0, 0, 0, 0.4);
+
+  transition:
+    transform 0.2s ease,
+    box-shadow 0.2s ease;
+}
+
+
+.player-card:hover .lobby-dino {
+  transform: scale(1.06);
+}
+
+
+.dino-emoji {
+  position: relative;
+
+  z-index: 2;
+
+  line-height: 1;
+}
+
+
+/* =========================================================
+   COLOR DOT
+========================================================= */
+
+.color-dot {
+  position: absolute;
+
+  right: -3px;
+
+  bottom: -3px;
+
+  width: 20px;
+  height: 20px;
+
+  border-radius: 50%;
+
+  border: 3px solid #111827;
+
+  z-index: 3;
+}
+
+
+/* =========================================================
+   RED DINO
+========================================================= */
+
+.lobby-dino.dino-red {
+  background:
+    linear-gradient(
+      135deg,
+      #ef4444,
+      #7f1d1d
+    );
+
+  border-color: #f87171;
+
+  box-shadow:
+    0 0 28px rgba(239, 68, 68, 0.55);
+}
+
+
+.lobby-dino.dino-red .color-dot {
+  background: #ef4444;
+}
+
+
+/* =========================================================
+   BLUE DINO
+========================================================= */
+
+.lobby-dino.dino-blue {
+  background:
+    linear-gradient(
+      135deg,
+      #3b82f6,
+      #1e3a8a
+    );
+
+  border-color: #60a5fa;
+
+  box-shadow:
+    0 0 28px rgba(59, 130, 246, 0.55);
+}
+
+
+.lobby-dino.dino-blue .color-dot {
+  background: #3b82f6;
+}
+
+
+/* =========================================================
+   GREEN DINO
+========================================================= */
+
+.lobby-dino.dino-green {
+  background:
+    linear-gradient(
+      135deg,
+      #22c55e,
+      #166534
+    );
+
+  border-color: #4ade80;
+
+  box-shadow:
+    0 0 28px rgba(34, 197, 94, 0.55);
+}
+
+
+.lobby-dino.dino-green .color-dot {
+  background: #22c55e;
+}
+
+
+/* =========================================================
+   YELLOW DINO
+========================================================= */
+
+.lobby-dino.dino-yellow {
+  background:
+    linear-gradient(
+      135deg,
+      #facc15,
+      #a16207
+    );
+
+  border-color: #fde047;
+
+  box-shadow:
+    0 0 28px rgba(250, 204, 21, 0.55);
+}
+
+
+.lobby-dino.dino-yellow .color-dot {
+  background: #facc15;
+}
+
+
+/* =========================================================
+   PURPLE DINO
+========================================================= */
+
+.lobby-dino.dino-purple {
+  background:
+    linear-gradient(
+      135deg,
+      #a855f7,
+      #581c87
+    );
+
+  border-color: #c084fc;
+
+  box-shadow:
+    0 0 28px rgba(168, 85, 247, 0.55);
+}
+
+
+.lobby-dino.dino-purple .color-dot {
+  background: #a855f7;
+}
+
+
+/* =========================================================
+   ORANGE DINO
+========================================================= */
+
+.lobby-dino.dino-orange {
+  background:
+    linear-gradient(
+      135deg,
+      #f97316,
+      #9a3412
+    );
+
+  border-color: #fb923c;
+
+  box-shadow:
+    0 0 28px rgba(249, 115, 22, 0.55);
+}
+
+
+.lobby-dino.dino-orange .color-dot {
+  background: #f97316;
+}
+
+
+/* =========================================================
+   PLAYER INFORMATION
+========================================================= */
+
+.player-card-info {
+  flex: 1;
+
+  min-width: 0;
+}
+
+
+.player-name-row {
+  display: flex;
+
+  align-items: center;
+
+  flex-wrap: wrap;
+
+  gap: 7px;
+}
+
+
+.player-name-row h3 {
+  font-size: 17px;
+
+  color: #f8fafc;
+}
+
+
+.player-card-info > p {
+  color: #64748b;
+
+  font-size: 11px;
+
+  margin-top: 5px;
+}
+
+
+.owner-badge {
+  font-size: 9px;
+
+  font-weight: 800;
+
+  padding: 4px 7px;
+
+  border-radius: 5px;
+
+  background: rgba(250, 204, 21, 0.15);
+
+  color: #facc15;
+
+  border: 1px solid rgba(250, 204, 21, 0.3);
+}
+
+
+.you-badge {
+  display: inline-block;
+
+  margin-top: 8px;
+
+  font-size: 9px;
+
+  font-weight: 800;
+
+  padding: 4px 7px;
+
+  border-radius: 5px;
+
+  background: rgba(59, 130, 246, 0.15);
+
+  color: #60a5fa;
+}
+
+
+/* =========================================================
+   PLAYER COLOR INFO
+========================================================= */
+
+.player-color-info {
+  display: flex;
+
+  flex-direction: column;
+
+  align-items: flex-start;
+
+  gap: 4px;
+
+  min-width: 75px;
+}
+
+
+.player-color-info span {
+  color: #64748b;
+
+  font-size: 8px;
+
+  font-weight: 800;
+
+  letter-spacing: 1px;
+}
+
+
+.player-color-info strong {
+  font-size: 11px;
+
+  letter-spacing: 1px;
+}
+
+
+/* COLOR TEXT */
+
+.color-red .player-color-info strong {
+  color: #f87171;
+}
+
+.color-blue .player-color-info strong {
+  color: #60a5fa;
+}
+
+.color-green .player-color-info strong {
+  color: #4ade80;
+}
+
+.color-yellow .player-color-info strong {
+  color: #fde047;
+}
+
+.color-purple .player-color-info strong {
+  color: #c084fc;
+}
+
+.color-orange .player-color-info strong {
+  color: #fb923c;
+}
+
+
+/* =========================================================
+   SCORE
+========================================================= */
+
+.player-score {
+  display: flex;
+
+  flex-direction: column;
+
+  align-items: flex-end;
+
+  gap: 3px;
+}
+
+
+.player-score span {
+  color: #64748b;
+
+  font-size: 9px;
+
+  font-weight: 800;
+
+  letter-spacing: 1px;
+}
+
+
+.player-score strong {
+  font-size: 22px;
+
+  color: #f8fafc;
+}
+
+
+/* =========================================================
+   LEADERBOARD
+========================================================= */
+
+.leaderboard-section {
+  padding: 22px;
+
+  border-radius: 18px;
+
+  background: #0f172a;
+
+  border: 1px solid #263244;
+}
+
+
+.leaderboard-list {
+  display: flex;
+
+  flex-direction: column;
+
+  gap: 8px;
+}
+
+
+.leaderboard-row {
+  display: grid;
+
+  grid-template-columns:
+    45px
+    48px
+    1fr
+    auto;
+
+  align-items: center;
+
+  gap: 12px;
+
+  padding: 11px 14px;
+
+  border-radius: 12px;
+
+  background: #111827;
+
+  border: 1px solid #1f2937;
+}
+
+
+.rank {
+  color: #64748b;
+
+  font-size: 13px;
+
+  font-weight: 800;
+}
+
+
+/* =========================================================
+   SMALL DINO
+========================================================= */
+
+.small-dino {
+  width: 42px;
+  height: 42px;
+
+  display: flex;
+
+  align-items: center;
+
+  justify-content: center;
+
+  border-radius: 13px;
+
+  border: 2px solid white;
+
+  font-size: 24px;
+}
+
+
+.small-dino.dino-red {
+  background: #991b1b;
+  border-color: #f87171;
+}
+
+.small-dino.dino-blue {
+  background: #1e3a8a;
+  border-color: #60a5fa;
+}
+
+.small-dino.dino-green {
+  background: #166534;
+  border-color: #4ade80;
+}
+
+.small-dino.dino-yellow {
+  background: #a16207;
+  border-color: #fde047;
+}
+
+.small-dino.dino-purple {
+  background: #581c87;
+  border-color: #c084fc;
+}
+
+.small-dino.dino-orange {
+  background: #9a3412;
+  border-color: #fb923c;
+}
+
+
+/* =========================================================
+   LEADERBOARD NAME
+========================================================= */
+
+.leaderboard-name {
+  display: flex;
+
+  align-items: center;
+
+  gap: 10px;
+}
+
+
+.leaderboard-name strong {
+  color: #e5e7eb;
+
+  font-size: 14px;
+}
+
+
+.leaderboard-color-text {
+  font-size: 9px;
+
+  font-weight: 800;
+
+  letter-spacing: 1px;
+}
+
+
+.color-text-red {
+  color: #f87171;
+}
+
+.color-text-blue {
+  color: #60a5fa;
+}
+
+.color-text-green {
+  color: #4ade80;
+}
+
+.color-text-yellow {
+  color: #fde047;
+}
+
+.color-text-purple {
+  color: #c084fc;
+}
+
+.color-text-orange {
+  color: #fb923c;
+}
+
+
+.leaderboard-score {
+  font-size: 17px;
+
+  font-weight: 800;
+
+  color: #f8fafc;
+}
+
+
+/* =========================================================
+   FOOTER
+========================================================= */
+
+.lobby-footer {
+  margin-top: 25px;
+
+  padding: 20px;
+
+  border-radius: 16px;
+
+  border: 1px solid #263244;
+
+  background: #0f172a;
+
+  text-align: center;
+}
+
+
+.lobby-footer > p {
+  color: #94a3b8;
+
+  font-size: 13px;
+
+  margin-bottom: 15px;
+}
+
+
+.start-game-button {
+  border: none;
+
+  padding: 14px 28px;
+
+  border-radius: 11px;
+
+  background:
+    linear-gradient(
+      135deg,
+      #22c55e,
+      #15803d
+    );
+
+  color: white;
+
+  font-weight: 900;
+
+  cursor: pointer;
+
+  letter-spacing: 0.5px;
+
+  box-shadow:
+    0 8px 25px rgba(34, 197, 94, 0.25);
+
+  transition: 0.2s;
+}
+
+
+.start-game-button:hover {
+  transform: translateY(-2px);
+
+  box-shadow:
+    0 12px 30px rgba(34, 197, 94, 0.35);
+}
+
+
+/* =========================================================
+   WAITING
+========================================================= */
+
+.waiting-message {
+  display: flex;
+
+  align-items: center;
+
+  justify-content: center;
+
+  gap: 12px;
+
+  text-align: left;
+}
+
+
+.waiting-message > span {
+  font-size: 25px;
+}
+
+
+.waiting-message strong {
+  color: #e5e7eb;
+
+  font-size: 14px;
+}
+
+
+.waiting-message p {
+  color: #64748b;
+
+  font-size: 12px;
+
+  margin-top: 3px;
+}
+
+
+/* =========================================================
+   RESPONSIVE
+========================================================= */
+
+@media (max-width: 800px) {
+
+  .players-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .player-card {
+    min-height: 110px;
+  }
+
+  .player-color-info {
+    display: none;
+  }
+
+}
+
+
+@media (max-width: 600px) {
+
+  .lobby-page {
+    padding: 20px 12px;
+  }
+
+  .lobby-header {
+    gap: 12px;
+  }
+
+  .lobby-title-area h1 {
+    font-size: 25px;
+  }
+
+  .room-code-card {
+    padding: 18px;
+  }
+
+  .room-code-card h2 {
+    font-size: 22px;
+    letter-spacing: 4px;
+  }
+
+  .player-card {
+    gap: 11px;
+
+    padding: 13px;
+  }
+
+  .lobby-dino {
+    width: 58px;
+    height: 58px;
+
+    min-width: 58px;
+
+    font-size: 31px;
+  }
+
+  .player-score strong {
+    font-size: 18px;
+  }
+
+  .leaderboard-section {
+    padding: 15px;
+  }
+
+  .leaderboard-row {
+    grid-template-columns:
+      32px
+      40px
+      1fr
+      auto;
+
+    gap: 8px;
+  }
+
+  .small-dino {
+    width: 36px;
+    height: 36px;
+
+    font-size: 20px;
+  }
+
+  .leaderboard-color-text {
+    display: none;
+  }
+
+}

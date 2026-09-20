@@ -1,0 +1,1147 @@
+/* =========================================================
+   GAME PAGE
+========================================================= */
+
+.game-page {
+  width: 100%;
+  min-height: 100vh;
+
+  overflow: hidden;
+
+  position: relative;
+
+  background:
+    linear-gradient(
+      180deg,
+      #7dd3fc 0%,
+      #bae6fd 45%,
+      #fef3c7 100%
+    );
+
+  color: #172033;
+
+  user-select: none;
+
+  cursor: pointer;
+}
+
+
+/* =========================================================
+   HUD
+========================================================= */
+
+.game-hud {
+  position: absolute;
+
+  top: 20px;
+  left: 20px;
+  right: 20px;
+
+  z-index: 30;
+
+  display: flex;
+
+  justify-content: space-between;
+
+  align-items: center;
+
+  gap: 20px;
+}
+
+.game-player,
+.game-score,
+.game-room {
+  min-width: 150px;
+
+  padding: 12px 18px;
+
+  border:
+    2px solid
+    rgba(255, 255, 255, 0.7);
+
+  border-radius: 14px;
+
+  background:
+    rgba(255, 255, 255, 0.7);
+
+  backdrop-filter:
+    blur(12px);
+
+  box-shadow:
+    0 8px 25px
+    rgba(15, 23, 42, 0.12);
+}
+
+.game-hud span {
+  display: block;
+
+  font-size: 10px;
+
+  font-weight: 800;
+
+  letter-spacing: 2px;
+
+  opacity: 0.65;
+}
+
+.game-hud strong {
+  display: block;
+
+  margin-top: 3px;
+
+  font-size: 20px;
+
+  font-weight: 900;
+}
+
+.game-score {
+  text-align: center;
+
+  min-width: 180px;
+}
+
+.game-score strong {
+  font-size: 28px;
+}
+
+.game-room {
+  text-align: right;
+}
+
+
+/* =========================================================
+   GAME WORLD
+========================================================= */
+
+.game-world {
+  position: relative;
+
+  width: 100%;
+
+  height: 100vh;
+
+  min-height: 550px;
+
+  overflow: hidden;
+}
+
+
+/* =========================================================
+   SUN
+========================================================= */
+
+.game-sun {
+  position: absolute;
+
+  top: 90px;
+
+  right: 12%;
+
+  font-size: 80px;
+
+  z-index: 1;
+
+  animation:
+    sunFloat
+    4s
+    ease-in-out
+    infinite;
+}
+
+@keyframes sunFloat {
+  0%,
+  100% {
+    transform:
+      translateY(0);
+  }
+
+  50% {
+    transform:
+      translateY(-10px);
+  }
+}
+
+
+/* =========================================================
+   CLOUDS
+========================================================= */
+
+.cloud {
+  position: absolute;
+
+  pointer-events: none;
+
+  user-select: none;
+
+  z-index: 2;
+
+  animation:
+    cloudMove
+    linear
+    infinite;
+}
+
+.cloud-one {
+  top: 15%;
+
+  left: 100%;
+
+  font-size: 55px;
+
+  animation-duration:
+    22s;
+}
+
+.cloud-two {
+  top: 28%;
+
+  left: 120%;
+
+  font-size: 38px;
+
+  animation-duration:
+    30s;
+}
+
+.cloud-three {
+  top: 10%;
+
+  left: 150%;
+
+  font-size: 46px;
+
+  animation-duration:
+    26s;
+}
+
+@keyframes cloudMove {
+  from {
+    transform:
+      translateX(0);
+  }
+
+  to {
+    transform:
+      translateX(-180vw);
+  }
+}
+
+
+/* =========================================================
+   HILLS
+========================================================= */
+
+.game-hills {
+  position: absolute;
+
+  left: 0;
+  right: 0;
+
+  bottom: 90px;
+
+  height: 180px;
+
+  overflow: hidden;
+
+  pointer-events: none;
+
+  z-index: 2;
+}
+
+.hill {
+  position: absolute;
+
+  bottom: -90px;
+
+  width: 350px;
+
+  height: 210px;
+
+  border-radius:
+    50% 50% 0 0;
+
+  background:
+    rgba(34, 197, 94, 0.25);
+
+  animation:
+    hillMove
+    linear
+    infinite;
+}
+
+.hill-one {
+  left: 5%;
+
+  animation-duration:
+    18s;
+}
+
+.hill-two {
+  left: 45%;
+
+  width: 420px;
+
+  height: 240px;
+
+  animation-duration:
+    23s;
+}
+
+.hill-three {
+  left: 80%;
+
+  width: 380px;
+
+  height: 220px;
+
+  animation-duration:
+    28s;
+}
+
+@keyframes hillMove {
+  from {
+    transform:
+      translateX(0);
+  }
+
+  to {
+    transform:
+      translateX(-130vw);
+  }
+}
+
+
+/* =========================================================
+   DINO
+========================================================= */
+
+.game-dino {
+  position: absolute;
+
+  left: 12%;
+
+  bottom: 115px;
+
+  z-index: 10;
+
+  width: 90px;
+
+  height: 90px;
+
+  display: flex;
+
+  align-items: center;
+
+  justify-content: center;
+
+  font-size: 70px;
+
+  line-height: 1;
+
+  border-radius: 20px;
+
+  border:
+    4px solid;
+
+  background:
+    rgba(255, 255, 255, 0.25);
+
+  box-shadow:
+    0 12px 25px
+    rgba(15, 23, 42, 0.18);
+
+  transform-origin:
+    center bottom;
+}
+
+
+/* Running */
+
+.dino-running {
+  animation:
+    dinoRun
+    0.22s
+    infinite
+    alternate;
+}
+
+@keyframes dinoRun {
+  from {
+    transform:
+      translateY(0)
+      rotate(-2deg);
+  }
+
+  to {
+    transform:
+      translateY(-7px)
+      rotate(2deg);
+  }
+}
+
+
+/* Jump */
+
+.dino-jump {
+  animation:
+    dinoJump
+    0.6s
+    ease-out;
+}
+
+@keyframes dinoJump {
+  0% {
+    transform:
+      translateY(0)
+      rotate(0);
+  }
+
+  35% {
+    transform:
+      translateY(-125px)
+      rotate(-6deg);
+  }
+
+  65% {
+    transform:
+      translateY(-125px)
+      rotate(6deg);
+  }
+
+  100% {
+    transform:
+      translateY(0)
+      rotate(0);
+  }
+}
+
+
+/* =========================================================
+   OBSTACLES
+========================================================= */
+
+.runner-obstacle {
+  position: absolute;
+
+  bottom: 82px;
+
+  z-index: 8;
+
+  line-height: 1;
+
+  pointer-events: none;
+
+  user-select: none;
+
+  white-space: nowrap;
+
+  transform:
+    translateX(-50%);
+}
+
+
+/* BIG CACTUS */
+
+.obstacle-cactus {
+  font-size: 75px;
+
+  animation:
+    cactusBounce
+    0.35s
+    infinite
+    alternate;
+}
+
+@keyframes cactusBounce {
+  from {
+    transform:
+      translateX(-50%)
+      translateY(0);
+  }
+
+  to {
+    transform:
+      translateX(-50%)
+      translateY(-3px);
+  }
+}
+
+
+/* ROCK */
+
+.obstacle-rock {
+  bottom: 80px;
+
+  font-size: 50px;
+
+  animation:
+    rockBounce
+    0.5s
+    infinite
+    alternate;
+}
+
+@keyframes rockBounce {
+  from {
+    transform:
+      translateX(-50%)
+      rotate(-3deg);
+  }
+
+  to {
+    transform:
+      translateX(-50%)
+      rotate(3deg);
+  }
+}
+
+
+/* DOUBLE CACTUS */
+
+.obstacle-double-cactus {
+  bottom: 82px;
+
+  font-size: 65px;
+
+  animation:
+    cactusBounce
+    0.35s
+    infinite
+    alternate;
+}
+
+
+/* =========================================================
+   GROUND
+========================================================= */
+
+.game-ground {
+  position: absolute;
+
+  left: 0;
+  right: 0;
+
+  bottom: 0;
+
+  height: 120px;
+
+  z-index: 7;
+
+  overflow: hidden;
+
+  background:
+    linear-gradient(
+      180deg,
+      #d6a85f 0%,
+      #b77932 100%
+    );
+
+  border-top:
+    5px solid
+    #6b4423;
+}
+
+.ground-line {
+  position: absolute;
+
+  top: 0;
+
+  left: 0;
+  right: 0;
+
+  height: 6px;
+
+  background:
+    #4b321b;
+}
+
+.ground-pattern {
+  position: absolute;
+
+  top: 35px;
+
+  left: 0;
+
+  width: 200%;
+
+  white-space: nowrap;
+
+  font-size: 22px;
+
+  letter-spacing: 18px;
+
+  opacity: 0.45;
+
+  animation:
+    groundMove
+    1.8s
+    linear
+    infinite;
+}
+
+.ground-details {
+  position: absolute;
+
+  top: 72px;
+
+  left: 0;
+
+  width: 200%;
+
+  white-space: nowrap;
+
+  font-size: 15px;
+
+  letter-spacing: 12px;
+
+  opacity: 0.35;
+
+  animation:
+    groundMove
+    2.4s
+    linear
+    infinite
+    reverse;
+}
+
+@keyframes groundMove {
+  from {
+    transform:
+      translateX(0);
+  }
+
+  to {
+    transform:
+      translateX(-50%);
+  }
+}
+
+.ground-stopped {
+  animation-play-state:
+    paused;
+}
+
+
+/* =========================================================
+   GAME INSTRUCTION
+========================================================= */
+
+.game-instruction {
+  position: absolute;
+
+  left: 50%;
+
+  bottom: 165px;
+
+  transform:
+    translateX(-50%);
+
+  z-index: 15;
+
+  text-align: center;
+
+  padding: 15px 24px;
+
+  border-radius: 16px;
+
+  background:
+    rgba(255, 255, 255, 0.78);
+
+  backdrop-filter:
+    blur(10px);
+
+  box-shadow:
+    0 10px 30px
+    rgba(15, 23, 42, 0.12);
+
+  animation:
+    instructionPulse
+    1.5s
+    ease-in-out
+    infinite;
+}
+
+.game-instruction span {
+  display: inline-block;
+
+  padding: 6px 12px;
+
+  border-radius: 8px;
+
+  background:
+    #172033;
+
+  color: white;
+
+  font-size: 12px;
+
+  font-weight: 900;
+
+  letter-spacing: 1px;
+}
+
+.game-instruction p {
+  margin-top: 7px;
+
+  font-size: 13px;
+
+  font-weight: 700;
+}
+
+@keyframes instructionPulse {
+  0%,
+  100% {
+    transform:
+      translateX(-50%)
+      translateY(0);
+  }
+
+  50% {
+    transform:
+      translateX(-50%)
+      translateY(-5px);
+  }
+}
+
+
+/* =========================================================
+   GAME OVER
+========================================================= */
+
+.game-over-overlay {
+  position: absolute;
+
+  inset: 0;
+
+  z-index: 50;
+
+  display: flex;
+
+  align-items: center;
+
+  justify-content: center;
+
+  padding: 20px;
+
+  background:
+    rgba(15, 23, 42, 0.65);
+
+  backdrop-filter:
+    blur(8px);
+}
+
+.game-over-card {
+  width: min(
+    460px,
+    92%
+  );
+
+  padding: 40px 30px;
+
+  text-align: center;
+
+  border:
+    2px solid
+    rgba(255, 255, 255, 0.25);
+
+  border-radius: 28px;
+
+  background:
+    rgba(255, 255, 255, 0.96);
+
+  box-shadow:
+    0 30px 80px
+    rgba(0, 0, 0, 0.35);
+
+  animation:
+    gameOverAppear
+    0.35s
+    ease-out;
+}
+
+@keyframes gameOverAppear {
+  from {
+    opacity: 0;
+
+    transform:
+      translateY(25px)
+      scale(0.95);
+  }
+
+  to {
+    opacity: 1;
+
+    transform:
+      translateY(0)
+      scale(1);
+  }
+}
+
+.dead-dino {
+  font-size: 60px;
+
+  margin-bottom: 8px;
+}
+
+.game-over-label {
+  font-size: 11px;
+
+  font-weight: 900;
+
+  letter-spacing: 3px;
+
+  color: #dc2626;
+}
+
+.game-over-card h1 {
+  margin-top: 5px;
+
+  font-size: 38px;
+
+  color: #172033;
+}
+
+.final-score {
+  margin: 25px 0;
+
+  padding: 18px;
+
+  border-radius: 16px;
+
+  background:
+    #f1f5f9;
+}
+
+.final-score span {
+  display: block;
+
+  font-size: 10px;
+
+  font-weight: 900;
+
+  letter-spacing: 2px;
+
+  color: #64748b;
+}
+
+.final-score strong {
+  display: block;
+
+  margin-top: 5px;
+
+  font-size: 42px;
+
+  color: #172033;
+}
+
+.game-over-buttons {
+  display: flex;
+
+  gap: 12px;
+}
+
+.game-over-buttons button {
+  flex: 1;
+
+  min-height: 52px;
+
+  border: none;
+
+  border-radius: 14px;
+
+  font-size: 13px;
+
+  font-weight: 900;
+
+  cursor: pointer;
+
+  transition:
+    transform 0.2s,
+    box-shadow 0.2s;
+}
+
+.game-over-buttons button:hover {
+  transform:
+    translateY(-3px);
+
+  box-shadow:
+    0 10px 20px
+    rgba(0, 0, 0, 0.15);
+}
+
+.restart-button {
+  background:
+    #16a34a;
+
+  color: white;
+}
+
+.exit-button {
+  background:
+    #e2e8f0;
+
+  color: #172033;
+}
+
+
+/* =========================================================
+   MOBILE JUMP BUTTON
+========================================================= */
+
+.mobile-jump-button {
+  position: fixed;
+
+  right: 25px;
+
+  bottom: 25px;
+
+  z-index: 60;
+
+  width: 80px;
+
+  height: 80px;
+
+  display: flex;
+
+  flex-direction: column;
+
+  align-items: center;
+
+  justify-content: center;
+
+  gap: 2px;
+
+  border: none;
+
+  border-radius: 50%;
+
+  background:
+    #172033;
+
+  color: white;
+
+  box-shadow:
+    0 12px 30px
+    rgba(0, 0, 0, 0.25);
+
+  cursor: pointer;
+
+  font-size: 28px;
+
+  font-weight: 900;
+
+  transition:
+    transform 0.15s;
+}
+
+.mobile-jump-button:hover {
+  transform:
+    scale(1.06);
+}
+
+.mobile-jump-button:active {
+  transform:
+    scale(0.94);
+}
+
+.mobile-jump-button span {
+  font-size: 9px;
+
+  letter-spacing: 1px;
+}
+
+
+/* =========================================================
+   MOBILE
+========================================================= */
+
+@media (max-width: 768px) {
+
+  .game-hud {
+    top: 10px;
+
+    left: 10px;
+
+    right: 10px;
+
+    gap: 7px;
+  }
+
+  .game-player,
+  .game-score,
+  .game-room {
+    min-width: 0;
+
+    flex: 1;
+
+    padding: 8px 9px;
+
+    border-radius: 10px;
+  }
+
+  .game-hud span {
+    font-size: 8px;
+
+    letter-spacing: 1px;
+  }
+
+  .game-hud strong {
+    font-size: 14px;
+  }
+
+  .game-score strong {
+    font-size: 20px;
+  }
+
+  .game-sun {
+    top: 90px;
+
+    right: 7%;
+
+    font-size: 55px;
+  }
+
+  .game-dino {
+    left: 9%;
+
+    bottom: 92px;
+
+    width: 72px;
+
+    height: 72px;
+
+    font-size: 55px;
+  }
+
+  .runner-obstacle {
+    bottom: 62px;
+  }
+
+  .obstacle-cactus {
+    font-size: 60px;
+  }
+
+  .obstacle-rock {
+    bottom: 61px;
+
+    font-size: 40px;
+  }
+
+  .obstacle-double-cactus {
+    bottom: 62px;
+
+    font-size: 52px;
+  }
+
+  .game-ground {
+    height: 95px;
+  }
+
+  .game-hills {
+    bottom: 70px;
+
+    height: 120px;
+  }
+
+  .hill {
+    width: 220px;
+
+    height: 140px;
+  }
+
+  .game-instruction {
+    bottom: 125px;
+
+    width: max-content;
+
+    max-width: 85%;
+
+    padding: 10px 15px;
+  }
+
+  .game-instruction p {
+    font-size: 11px;
+  }
+
+  .game-over-card {
+    padding: 30px 20px;
+  }
+
+  .game-over-card h1 {
+    font-size: 30px;
+  }
+
+  .final-score strong {
+    font-size: 36px;
+  }
+
+  .game-over-buttons {
+    flex-direction: column;
+  }
+
+  .mobile-jump-button {
+    right: 18px;
+
+    bottom: 18px;
+
+    width: 72px;
+
+    height: 72px;
+  }
+}
+
+
+/* =========================================================
+   SMALL MOBILE
+========================================================= */
+
+@media (max-width: 420px) {
+
+  .game-dino {
+    left: 7%;
+  }
+
+  .game-player,
+  .game-score,
+  .game-room {
+    padding: 7px 6px;
+  }
+
+  .game-hud strong {
+    font-size: 12px;
+  }
+
+  .game-score strong {
+    font-size: 18px;
+  }
+}
+/* =========================================================
+   HIDE PLAYER NAME WHILE JUMPING
+========================================================= */
+
+.game-dino.dino-jump .player-name-tag {
+  display: none !important;
+}
+
+.other-player-dino.other-dino-jump .other-player-name {
+  display: none !important;
+}
+
+
+/* =========================================================
+   REDUCED MOTION
+========================================================= */
+
+@media (prefers-reduced-motion: reduce) {
+
+  .game-dino,
+  .runner-obstacle,
+  .ground-pattern,
+  .ground-details,
+  .cloud,
+  .hill,
+  .game-sun,
+  .game-instruction {
+    animation: none;
+  }
+}
